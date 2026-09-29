@@ -108,7 +108,7 @@ int main(){
     {
         e[i].display();
     }
-    cout<<"Total Employee : "<<Employee::Count<<endl;
+    cout<<"Total Employee : "<<Employee::Count()<<endl;
     
     
     return 0;

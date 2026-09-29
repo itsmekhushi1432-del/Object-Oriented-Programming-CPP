@@ -7,7 +7,7 @@ Friendship is not transitive.
 #include<iostream>
 using namespace std;
 
-class Teacher;
+//class Teacher;
 
 class Student
 {
