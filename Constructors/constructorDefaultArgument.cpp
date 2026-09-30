@@ -7,6 +7,7 @@ class Student
 {
 public:
 
+    //default argument always written right to left
     Student(string name, int age = 18)
     {
         cout << "Name : " << name << endl;
