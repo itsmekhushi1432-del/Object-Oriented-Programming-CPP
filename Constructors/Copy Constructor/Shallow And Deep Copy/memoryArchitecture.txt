@@ -1,0 +1,74 @@
++----------------------------------+
+|          Code Segment            |
++----------------------------------+
+|      Global / Static Memory      |
++----------------------------------+
+|              Heap                |
++----------------------------------+
+|              Stack               |
++----------------------------------+
+1. Code Segment
+Contains the program instructions (compiled code).
+Stores the executable instructions that the CPU runs.
+2. Global / Static Memory
+Stores global variables and static variables.
+These variables are created once and remain in memory until the program ends.
+3. Stack Memory
+
+This is where:
+
+Local variables
+Function parameters
+Objects
+Pointer variables
+
+are stored.
+
+Features:
+
+Memory is allocated automatically.
+Memory is deallocated (freed) automatically when the function ends.
+Managed by the compiler.
+Fast access.
+4. Heap Memory
+
+Heap memory is used to store dynamic memory (memory allocated during program execution).
+
+It is created using the new keyword.
+
+Example:
+
+int *ptr = new int(50);
+
+Memory representation:
+
+Stack Memory                    Heap Memory
+
++---------+                +---------+
+|  ptr    | -------------> |   50    |
++---------+                +---------+
+Features:
+Stores dynamically allocated data.
+Memory is allocated using the new operator.
+Memory is not freed automatically when a function ends.
+The programmer must free the memory using the delete operator.
+Managed by the programmer.
+Useful when the amount of memory needed is known only at runtime or when data needs to outlive a function.
+
+Example:
+
+int *ptr = new int(50);
+
+// Work with the data
+
+delete ptr;    // Frees the heap memory
+⭐ Important Points
+new
+Allocates memory in the Heap.
+Returns the address of the allocated memory.
+Example:
+int *ptr = new int(100);
+
+delete
+Frees the memory allocated in the Heap.
+Prevents memory leaks.
