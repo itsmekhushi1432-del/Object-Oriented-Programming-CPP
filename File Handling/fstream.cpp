@@ -54,23 +54,24 @@ int main(){
     //in read mode
     file.open("student2.txt",ios::in);
 
-    //string name;
-    //getline(file,name);
+    //known number of lines
+    string name;
+    getline(file,name);
 
-    //string age;
-    //getline(file,age);
+    string age;
+    getline(file,age);
 
-    string line;
+    //other way print all lines more reliable when we don't know exactly how much lines are presesnt in the files
+    /*string line;
     while (getline(file,line))
     {
         cout<<line<<endl;
-    }
+    }*/
     
 
-    //cout<<name<<endl<<age<<endl;
+    cout<<name<<endl<<age<<endl;
 
     file.close();
-
 
     return 0;
 }

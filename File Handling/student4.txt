@@ -1,0 +1,4 @@
+Name: Khushi
+Age: 19
+CGPA: 8.33
+Course: B.Tech AI & ML
