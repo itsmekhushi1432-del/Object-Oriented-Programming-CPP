@@ -11,54 +11,60 @@
    • Average of all numbers*/
 
    #include<iostream>
-   #include<fstream>
-   
-   using namespace std;
-   
-   int main(){
-    
+#include<fstream>
+
+using namespace std;
+
+int main()
+{
     int arr[5];
-    cout<<"Enter 5 numbers: "<<endl;
-    for (int i = 0; i < 5; i++)
+
+    cout << "Enter 5 numbers: " << endl;
+
+    // Taking input from the user
+    for(int i = 0; i < 5; i++)
     {
-        cin>>arr[i];
+        cin >> arr[i];
     }
-    
-    fstream my_files("numbers.dat",ios::out | ios::binary);
-    for (int i = 0; i < 5; i++)
+
+    // Opening file in binary write mode
+    fstream my_files("numbers.dat", ios::out | ios::binary);
+
+    // Writing all numbers into the binary file
+    for(int i = 0; i < 5; i++)
     {
-        my_files.write((char*)&arr[i],sizeof(arr[i]));
+        my_files.write((char*)&arr[i], sizeof(arr[i]));
     }
+
     my_files.close();
 
+    // Opening the same file in binary read mode
+    my_files.open("numbers.dat", ios::in | ios::binary);
 
-    cout<<"Numbers stored in files: "<<endl;
     int num;
-
-    my_files.open("numbers.dat",ios::in | ios::binary);
-    while (my_files.read((char*)&num,sizeof(num)))
-    {
-        cout<<num<<" ";
-    }
-    cout<<endl;
-    my_files.close();
-
     int sum = 0;
     int count = 0;
-    
+
+    cout << "Numbers stored in file: ";
+
+    // Reading numbers until End Of File (EOF)
     while(my_files.read((char*)&num, sizeof(num)))
     {
         cout << num << " ";
 
+        // Calculating sum and counting numbers
         sum += num;
         count++;
     }
 
+    my_files.close();
+
+    // Calculating average
     float average = (float)sum / count;
-    cout<<"Sum = "<<sum<<endl;
-    cout<<"Average = "<<average<<endl;
-    
-    
-    
+
+    cout << endl;
+    cout << "Sum = " << sum << endl;
+    cout << "Average = " << average << endl;
+
     return 0;
-   }
+}
