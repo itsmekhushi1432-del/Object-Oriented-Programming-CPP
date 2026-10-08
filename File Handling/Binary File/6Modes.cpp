@@ -17,6 +17,7 @@ int main()
 
     fstream file("student.dat", ios::in | ios::out | ios::binary);
 
+    //Offset is the number of bytes by which the file pointer should move from a reference position (ios::beg, ios::cur, or ios::end).
     // ===========================
     // 1. seekg() + ios::beg
     // ===========================

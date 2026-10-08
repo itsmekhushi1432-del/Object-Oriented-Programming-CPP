@@ -8,6 +8,28 @@ Name: Khushi
 Course: B.Tech AI & ML
 Close the file.*/
 
+/*File State Functions---->These functions tell us whether the file is working correctly.
+1. good()
+Returns true if everything is okay.
+2. fail()
+Returns true if an operation failed.
+4. clear()
+
+Suppose
+while(file >> num)
+{
+}
+Now EOF is reached.
+If you try
+file >> num;
+Nothing happens because the file is still in the EOF state.
+To use the file again:
+file.clear();
+Then move the pointer.
+file.seekg(0);
+Now you can read from the beginning again.
+*/
+
 #include<iostream>
 #include<fstream>
 

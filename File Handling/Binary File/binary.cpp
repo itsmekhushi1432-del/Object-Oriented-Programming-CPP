@@ -36,6 +36,7 @@ int main(){
     int age = 19;
     fstream file("age.dat",ios::out | ios::binary);
 
+    //char* = Treat this memory as a sequence of bytes."
     file.write((char*)&age,sizeof(age));
     file.close();
 
