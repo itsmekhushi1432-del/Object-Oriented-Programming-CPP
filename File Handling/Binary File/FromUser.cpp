@@ -10,7 +10,7 @@
    • Sum of all numbers
    • Average of all numbers*/
 
-   #include<iostream>
+#include<iostream>
 #include<fstream>
 
 using namespace std;
